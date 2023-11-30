@@ -3,7 +3,7 @@ name: CD workflow
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   cd:
@@ -30,4 +30,4 @@ jobs:
         run: npm run build
 
       - name: Deploy
-        run: npm run deploy --r git@github.com:<your-repo>
+        run: npm run deploy --r git@github.com:${{ github.repository }}.git
